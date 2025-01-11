@@ -1,27 +1,27 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+	const [tareas, setTareas]= useState([])
+	const [nuevaTarea, setNuevaTarea]= useState('')
+	const manejarEntrada = (e) => {
+		setNuevaTarea(e.target.value);
+	}
+	const añadirTareas = () => {
+		if (nuevaTarea.trim() !== ''){
+			setTareas([...tareas, nuevaTarea]);
+			setNuevaTarea('');
+		}
+	}
+	const eliminarTarea = (index) => {
+		const modificarTareas = tareas.filter(())
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+	}
+	return (
+		<>
+		<input type="text" onChange={añadirTarea}/>
+		<button onClick={guardarTarea}>añade la tarea</button>
+		</>
 	);
 };
 
