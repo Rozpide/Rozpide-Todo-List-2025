@@ -26,13 +26,17 @@ const Home = () => {
 		<>
 			<h1>Lista de Tareas</h1>
 			<div>
+				{/*añado un input para que el usuario añada sus tareas */}
 				<input type="text" value={nuevaTarea} onChange={manejarEntrada} placeholder="Escribe una nueva tarea" />
+				{/*boton para aceptar la tarea y agregarla a la lista */}
 				<button onClick={añadirTareas}>Añade aqui nueva tarea</button>
 			</div>
 			<ul>
+				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
 			{tareas.map((tarea, index) => (
 				<li key={index}>
-					{tarea}
+					{tarea}{/*muestra el texto de la tarea dentro de cada '<li/>' */}
+					{/*boton para eliminar la tarea */}
 					<button onClick={() => eliminarTarea(index)}>Eliminar</button>
 				</li>
 			))}
