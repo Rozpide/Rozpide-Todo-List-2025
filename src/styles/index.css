@@ -29,7 +29,7 @@ body {
 .entrada-tarea {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;/*quito el espacio entre el input y la lista de tareas*/
 }
 
 .input-tarea {
@@ -37,11 +37,10 @@ body {
     font-size: 1em;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 250px;
+    width: 300px;
 }
 
 .lista-tareas {
-    
     list-style-type: none;
     padding: 0;
     border: 1px solid #ddd;
@@ -58,12 +57,14 @@ body {
     display: block;
     height: 10px;
     background-color: white;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transform: scale(0.9);/*reduce el tamaño del folio*/
 }
-
 .tarea-item {
     display: flex;
     justify-content: space-between;
@@ -75,14 +76,6 @@ body {
 .tarea-item:hover .boton-eliminar{
     display: inline;/*Mustro la 'X' cuando pasa el cursor por encima*/
 }
-.tarea-apilada{
-    margin-top: -5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .boton-eliminar {
     background-color: #dc3545;
     color: white;
