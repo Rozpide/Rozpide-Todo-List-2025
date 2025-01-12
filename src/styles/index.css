@@ -1,14 +1,3 @@
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -29,7 +18,7 @@ body {
 .entrada-tarea {
     display: flex;
     justify-content: center;
-    margin-bottom: 0;/*quito el espacio entre el input y la lista de tareas*/
+    margin-bottom: 0; /* Quitar el espacio entre el input y la lista de tareas */
 }
 
 .input-tarea {
@@ -50,9 +39,10 @@ body {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: visible;/*hago que los pseudo-elementos sean visibles*/
+    overflow: visible; /* Permitir que los pseudo-elementos sean visibles */
 }
-.lista-tareas::before, .lista-tareas::after{
+
+.lista-tareas::before, .lista-tareas::after {
     content: '';
     display: block;
     height: 10px;
@@ -62,19 +52,22 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: -1;
+    z-index: -1; /* Asegurar que los pseudo-elementos estén detrás de la lista de tareas */
 }
+
 .lista-tareas::before {
-    top: 100%;
+    top: calc(95.5% + 4px); /* Posicionar el primer folio justo debajo de la lista de tareas */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    transform: translate(2px) scale(0.95);
+    transform: translateY(4px) scale(0.98); /* Desplazar y escalar el primer folio */
 }
+
 .lista-tareas::after {
-    top: 100%;
+    top: calc(91% + 14px); /* Posicionar el segundo folio justo debajo del primero */
     box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
-    transform: translate(12px) scale(0.9);
+    transform: translateY(14px) scale(0.95); /* Escalar el segundo folio */
 }
-.lista-tareas::after::after {
+
+.folio {
     content: '';
     display: block;
     height: 10px;
@@ -84,11 +77,13 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;
+    top: calc(100% + 24px); /* Posicionar el tercer folio justo debajo del segundo */
     box-shadow: 0 18px 20px rgba(0, 0, 0, 0.1);
-    transform: translate(22px) scale(0.85);
+    transform: translateY(24px) scale(0.92); /* Escalar el tercer folio */
+    z-index: -2;
 }
-.lista-tareas::after::before {
+
+.folio-2 {
     content: '';
     display: block;
     height: 10px;
@@ -98,9 +93,10 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%; /*coloco el elemento completamente debajo*/
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
-    transform: translate(12px) scale(0.9);
+    top: calc(100% + 34px); /* Posicionar el cuarto folio justo debajo del tercero */
+    box-shadow: 0 24px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(34px) scale(0.9); /* Escalar el cuarto folio */
+    z-index: -3;
 }
 
 .tarea-item {
@@ -111,9 +107,11 @@ body {
     border-bottom: 1px solid #ddd;
     position: relative;
 }
-.tarea-item:hover .boton-eliminar{
-    display: inline;/*Mustro la 'X' cuando pasa el cursor por encima*/
+
+.tarea-item:hover .boton-eliminar {
+    display: inline; /* Muestra la "X" cuando se pasa el cursor por encima */
 }
+
 .boton-eliminar {
     background-color: #dc3545;
     color: white;
@@ -122,7 +120,7 @@ body {
     cursor: pointer;
     padding: 5px 10px;
     font-size: 1em;
-    display: none;/* oculto la 'X' por defecto*/
+    display: none; /* Esconde la "X" por defecto */
 }
 
 .boton-eliminar:hover {

@@ -41,15 +41,17 @@ const Home = () => {
 			</div>
 			<ul className="lista-tareas">
 				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
-			{tareas.map((tarea, index) => (
+				{tareas.map((tarea, index) => (
 				<li key={index} className={`tarea-item ${index > 0 ? 'tarea-apilada' : ''}`}>
 					{tarea}{/*muestra el texto de la tarea dentro de cada '<li/>' */}
 					{/*boton para eliminar la tarea */}
 					<button onClick={() => eliminarTarea(index)} className="boton-eliminar oculto">X</button>
-				</li>
-			))}
+				</li>	
+				))}
+				<p className="items-restantes">{tareas.length} item(s) left</p>
 			</ul>
-			<p className="items-restantes">{tareas.length} item(s) left</p>
+			<div className="folio"></div>
+			<div className="folio-2"></div>
 		</>
 	);
 };
