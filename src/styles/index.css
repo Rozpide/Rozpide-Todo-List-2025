@@ -9,11 +9,12 @@ body {
 }
 
 .titulo {
+    font-family: 'Roboto',sans-serif;
     font-size: 6em;
     text-align: center;
     margin-bottom: 20px;
     color: #d4b6b6;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .entrada-tarea {

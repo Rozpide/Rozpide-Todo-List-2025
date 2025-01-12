@@ -3,7 +3,7 @@ import React, { useState } from "react";// importamos react y el hook de estado
 //create your first component
 // Inicializamos el estado para almacenar las tareas y la nueva tarea que se va a agregar
 const Home = () => {
-	const [tareas, setTareas]= useState([]);// 'tareas' es un arreglo que contendra la lista de tareas
+	const [tareas, setTareas]= useState([]);// 'tareas' es un array que contendra la lista de tareas
 	const [nuevaTarea, setNuevaTarea]= useState(''); //'nuevaTarea' es una cadena vacia que se almacenara
 	// funcion para manejar los cambios en el input
 	const manejarEntrada = (e) => {
@@ -37,7 +37,7 @@ const Home = () => {
 					value={nuevaTarea}
 					onChange={manejarEntrada}
 					onKeyDown={manejarTecla}
-					placeholder="Escribe una nueva tarea" className="input-tarea"/>	
+					placeholder="What needs to be done?" className="input-tarea"/>	
 			</div>
 			<ul className="lista-tareas">
 				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
