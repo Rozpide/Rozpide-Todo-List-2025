@@ -24,23 +24,24 @@ const Home = () => {
 	}
 	return (
 		<>
-			<h1>Lista de Tareas</h1>
-			<div>
+			<h1 className="titulo">Lista de Tareas</h1>
+			<div className="entrada-tarea">
 				{/*añado un input para que el usuario añada sus tareas */}
-				<input type="text" value={nuevaTarea} onChange={manejarEntrada} placeholder="Escribe una nueva tarea" />
+				<input type="text" value={nuevaTarea} onChange={manejarEntrada} placeholder="Escribe una nueva tarea" className="input-tarea"/>
 				{/*boton para aceptar la tarea y agregarla a la lista */}
-				<button onClick={añadirTareas}>Añade aqui nueva tarea</button>
+				<button onClick={añadirTareas} className="boton-agregar">Añade aqui nueva tarea</button>
 			</div>
-			<ul>
+			<ul className="lista-tareas">
 				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
 			{tareas.map((tarea, index) => (
-				<li key={index}>
+				<li key={index} className="tarea-item">
 					{tarea}{/*muestra el texto de la tarea dentro de cada '<li/>' */}
 					{/*boton para eliminar la tarea */}
-					<button onClick={() => eliminarTarea(index)}>Eliminar</button>
+					<button onClick={() => eliminarTarea(index)} className="boton-eliminar">Eliminar</button>
 				</li>
 			))}
 			</ul>
+			<p className="items-restantes">{tareas.length} item(s) left</p>
 		</>
 	);
 };
