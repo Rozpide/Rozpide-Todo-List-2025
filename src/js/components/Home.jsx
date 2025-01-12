@@ -44,5 +44,5 @@ const Home = () => {
 		</>
 	);
 };
-
+/*exporto el componente Home para poder usarlo */
 export default Home;
