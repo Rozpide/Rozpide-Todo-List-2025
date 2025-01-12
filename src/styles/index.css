@@ -51,6 +51,17 @@ body {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
+    overflow: visible;/*hago que los pseudo-elementos sean visibles*/
+}
+.lista-tareas::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background-color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .tarea-item {
