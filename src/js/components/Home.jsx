@@ -30,7 +30,7 @@ const Home = () => {
 	}
 	return (
 		<>
-			<h1 className="titulo">TODOS</h1>
+			<h1 className="titulo">todos</h1>
 			<div className="entrada-tarea">
 				{/*añado un input para que el usuario añada sus tareas */}
 				<input type="text"
