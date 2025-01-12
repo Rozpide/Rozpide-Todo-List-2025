@@ -61,6 +61,9 @@ body {
     border-bottom: 1px solid #ddd;
     position: relative;
 }
+.tarea-item:hover .boton-eliminar{
+    display: inline;/*Mustro la 'X' cuando pasa el cursor por encima*/
+}
 .tarea-apilada{
     margin-top: -5px;
     border: 1px solid #ddd;
@@ -77,6 +80,7 @@ body {
     cursor: pointer;
     padding: 5px 10px;
     font-size: 1em;
+    display: none;/* oculto la 'X' por defecto*/
 }
 
 .boton-eliminar:hover {
