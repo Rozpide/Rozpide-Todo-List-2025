@@ -51,19 +51,38 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: visible;/*hago que los pseudo-elementos sean visibles*/
+    z-index: 3;
 }
 .lista-tareas::after {
     content: '';
     display: block;
     height: 10px;
     background-color: white;
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    transform: scale(0.9);/*reduce el tamaño del folio*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.lista-tareas::after {
+    top: 100%; /*coloco el elemento completamente debajo*/
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transform: translate(12px) scale(0.95);
+}
+.lista-tareas::after::after{
+    content: '';
+    display: block;
+    height: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transform: translate(22px) scale(0.9);
 }
 .tarea-item {
     display: flex;
