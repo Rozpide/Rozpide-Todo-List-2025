@@ -16,6 +16,12 @@ const Home = () => {
 			setNuevaTarea('');// despues limpiamos en campo del input
 		}
 	}
+	// funcion para añadir tareacuando el usuario pulsa 'enter'
+	const manejarTecla = (event) =>{
+		if (event.key === 'Enter'){
+			añadirTareas();
+		}
+	}
 	// funcion para eliminar una tarea especifica
 	const eliminarTarea = (index) => {
 		const actualizarTareas = tareas.filter((_, i) => i !== index);// filtro la lista para eliminar la tarea por indice
@@ -27,14 +33,12 @@ const Home = () => {
 			<h1 className="titulo">Lista de Tareas</h1>
 			<div className="entrada-tarea">
 				{/*añado un input para que el usuario añada sus tareas */}
-				<input type="text" value={nuevaTarea} onChange={manejarEntrada} placeholder="Escribe una nueva tarea" className="input-tarea"/>
-				{/*boton para aceptar la tarea y agregarla a la lista */}
-				<button onClick={añadirTareas} className="boton-agregar">Añade aqui nueva tarea</button>
+				<input type="text" value={nuevaTarea} onChange={manejarEntrada} onKeyDown={manejarTecla} placeholder="Escribe una nueva tarea" className="input-tarea"/>	
 			</div>
 			<ul className="lista-tareas">
 				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
 			{tareas.map((tarea, index) => (
-				<li key={index} className="tarea-item">
+				<li key={index} className={`tarea-item ${index > 0 ? 'tarea-apilada' : ''}`}>
 					{tarea}{/*muestra el texto de la tarea dentro de cada '<li/>' */}
 					{/*boton para eliminar la tarea */}
 					<button onClick={() => eliminarTarea(index)} className="boton-eliminar">Eliminar</button>
