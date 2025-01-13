@@ -37,7 +37,8 @@ const Home = () => {
 					value={nuevaTarea}
 					onChange={manejarEntrada}
 					onKeyDown={manejarTecla}
-					placeholder="What needs to be done?" className="input-tarea"/>	
+					placeholder="What needs to be done?"
+					className="input-tarea"/>	
 			</div>
 			<ul className="lista-tareas">
 				{/*mapeo la lista para mostrar cada tarea en un '<li/>' */}
