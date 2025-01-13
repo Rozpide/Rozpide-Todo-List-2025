@@ -46,7 +46,11 @@ const Home = () => {
 				<li key={index} className={`tarea-item ${index > 0 ? 'tarea-apilada' : ''}`}>
 					{tarea}{/*muestra el texto de la tarea dentro de cada '<li/>' */}
 					{/*boton para eliminar la tarea */}
-					<button onClick={() => eliminarTarea(index)} className="boton-eliminar oculto">X</button>
+					<button onClick={() => eliminarTarea(index)} className="boton-eliminar oculto">
+						<span class="material-symbols-outlined">{/*añado la x de closed con google fonts, para que tenga los angulos iguales */}
+						close
+						</span>
+					</button>
 				</li>	
 				))}
 				<p className="items-restantes">{tareas.length} item(s) left</p>
