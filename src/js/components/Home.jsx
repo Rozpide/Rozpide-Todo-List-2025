@@ -3,28 +3,28 @@ import React, { useState } from "react";// importamos react y el hook de estado
 //create your first component
 // Inicializamos el estado para almacenar las tareas y la nueva tarea que se va a agregar
 const Home = () => {
-	const [tareas, setTareas]= useState([]);// 'tareas' es un array que contendra la lista de tareas
-	const [nuevaTarea, setNuevaTarea]= useState(''); //'nuevaTarea' es una cadena vacia que se almacenara
-	// funcion para manejar los cambios en el input
-	const manejarEntrada = (e) => {
-		setNuevaTarea(e.target.value);// actualizo el estado de 'nuevaTarea?
+	const [tareas, setTareas]= useState([]);// 'tareas' es un array que contendrá la lista de tareas
+	const [nuevaTarea, setNuevaTarea]= useState(''); //'nuevaTarea' es una cadena vacia que se almacenara en tareas
+	// arrow funcion para manejar los cambios en el input cuando escribe el usuario
+	const manejarEntrada = (event) => {
+		setNuevaTarea(event.target.value);// actualizo el estado (valor) de 'nuevaTarea' con el evento que se dispara
 	}
-	// funcion para añadir una nueva tarea a la lista de tareas
+	//arrow funcion para añadir una nueva tarea a la lista de tareas
 	const añadirTareas = () => {
-		if (nuevaTarea.trim() !== ''){ // verifico que 'nuevaTarea' no este vacia
-			setTareas([...tareas, nuevaTarea]);// añado la nueva tarea a 'tareas'
+		if (nuevaTarea.trim() !== ''){ // verifico que 'nuevaTarea' no este vacia y trim elimina los espacios vacios al principio y final
+			setTareas([...tareas, nuevaTarea]);// añado la nueva tarea a 'tareas' al final del array, con el propagador (. . .), le añade 'nuevaTarea'
 			setNuevaTarea('');// despues limpiamos en campo del input
 		}
 	}
-	// funcion para añadir tarea cuando el usuario pulsa 'enter'
+	// arrow funcion para añadir tarea cuando el usuario pulsa 'enter'
 	const manejarTecla = (event) =>{
-		if (event.key === 'Enter'){
-			añadirTareas();
+		if (event.key === 'Enter'){/*verifico si la tecla presionada es enter */
+			añadirTareas();/*llamo a la funcion para añadir la tarea si se presiona enter */
 		}
 	}
-	// funcion para eliminar una tarea especifica
-	const eliminarTarea = (index) => {
-		const actualizarTareas = tareas.filter((_, i) => i !== index);// filtro la lista para eliminar la tarea por indice
+	// arrow funcion para eliminar una tarea especifica basandome en el indice
+	const eliminarTarea = (index) => {/*tomamos index, que es el indice que queremos eliminar */
+		const actualizarTareas = tareas.filter((_, i) => i !== index);// filtro la lista para eliminar la tarea elegida por indice y creo un nuevo array. _ representa cada tarea, como no se usan se pone guion bajo
 		setTareas(actualizarTareas);// actualizo el estado de 'tareas' con la lista filtrada
 		
 	}
