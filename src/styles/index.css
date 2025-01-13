@@ -67,25 +67,25 @@ body {
 .lista-tareas::before {
     top: 100%; /* Posicionar el primer folio justo debajo de la lista de tareas */
     box-shadow: 0 1px 1px rgba(128, 127, 127, 0.933);
-    transform: translateY(0px) scale(0.98); /* Desplazar y escalar el primer folio */
+    transform: translateY(3px) scale(0.97); /* Desplazar y escalar el primer folio */
 }
 
 .lista-tareas::after {
     top: 100%; /* Posicionar el segundo folio justo debajo del primero */
     box-shadow: 0 1px 1px rgb(138, 137, 137);
-    transform: translateY(7px) scale(0.93); /* Escalar el segundo folio */
+    transform: translateY(-2px) scale(0.99); /* Escalar el segundo folio */
 }
 
 .folio-1 {
     top: 80%; /* Posicionar el tercer folio justo debajo del segundo */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    transform: translateY(12px) scale(0); /* Escalar el tercer folio */
+    transform: translateY(12px) scale(3); /* Escalar el tercer folio */
     z-index: -2;
 }
 
 .folio-2 {
     top: 80%; /* Posicionar el cuarto folio justo debajo del tercero */
-    box-shadow: 0 24px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     transform: translateY(24px) scale(0); /* Escalar el cuarto folio */
     z-index: -3;
 }
